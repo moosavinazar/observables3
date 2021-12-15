@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {of, from} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {mockData} from "../helpers/mockData";
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    of(mockData).subscribe(console.log);
 
     this.http.get('assets/mockData.json').subscribe(console.log);
 
